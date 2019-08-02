@@ -22,5 +22,9 @@ install:
 script:
   - npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
 
+after_success:
+- ./node_modules/.bin/jscoverage lib lib-cov
+- ./node_modules/.bin/mocha YOUR_TESTS/**.js -R mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js
+
 notifications:
   email: false
