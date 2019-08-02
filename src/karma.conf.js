@@ -9,7 +9,7 @@ module.exports = function (config) {
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
-      require('@angular/cli/plugins/karma'),
+      // require('@angular/cli/plugins/karma'),
       require('karma-coverage'),
       // require('karma-coverage-istanbul-reporter'),
       require('@angular-devkit/build-angular/plugins/karma')
@@ -20,10 +20,6 @@ module.exports = function (config) {
     files: [
       { pattern: './src/test.ts', watched: false }
     ],
-    preprocessors: {
-      'dist/app/**/!(*spec).js': ['coverage'],
-      './src/test.ts': ['@angular/cli']
-    },
     mime: {
       'text/x-typescript': ['ts','tsx']
     },
