@@ -8,8 +8,8 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('PokemonComponent', () => {
-  let component: PokemonComponent;
-  let fixture: ComponentFixture<PokemonComponent>;
+  let component;
+  let fixture;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({

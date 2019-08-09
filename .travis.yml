@@ -1,30 +1,49 @@
+    
+sudo: false
 language: node_js
 node_js:
-  - "10"
-
-dist: trusty
-sudo: false
-
-addons:
-  apt:
-    sources:
-      - google-chrome
-    packages:
-      - google-chrome-stable
-
+- '8'
+branches:
+  only:
+  - master
 cache:
   directories:
-    - ./node_modules
-
+  - node_modules
+before_install:
+- npm update
 install:
-  - npm install
-
+- npm install
 script:
-  - npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
+- npm test
+- npm run coveralls
 
-after_success:
-- ./node_modules/.bin/jscoverage lib lib-cov
-- ./node_modules/.bin/mocha YOUR_TESTS/**.js -R mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js
+# language: node_js
+# node_js:
+#   - "10"
 
-notifications:
-  email: false
+# dist: trusty
+# sudo: false
+
+# addons:
+#   apt:
+#     sources:
+#       - google-chrome
+#     packages:
+#       - google-chrome-stable
+
+# cache:
+#   directories:
+#     - ./node_modules
+
+# install:
+#   - npm install
+
+# script:
+#   - npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
+
+# after_success:
+# - ./node_modules/.bin/jscoverage lib lib-cov
+# - ./node_modules/.bin/mocha YOUR_TESTS/**.js -R mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js
+
+# notifications:
+#   email: false

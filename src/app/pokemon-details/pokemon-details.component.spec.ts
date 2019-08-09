@@ -3,8 +3,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { PokemonDetailsComponent } from './pokemon-details.component';
 
 describe('PokemonDetailsComponent', () => {
-  let component: PokemonDetailsComponent;
-  let fixture: ComponentFixture<PokemonDetailsComponent>;
+  let component;
+  let fixture;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
